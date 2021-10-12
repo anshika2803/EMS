@@ -1,33 +1,32 @@
 import React from 'react';
-import Portfolio from './components/Portfolio';
-
+import Courses from './components/Courses';
 import './App.css';
 
 function App() {
   const portfolioLinks = [
     {
-      title: 'XXX',
-      caption: 'abc'
+      title: 'JEE MAIN',
+      price: '2000'
     },
     {
-      title: 'XXX',
-      caption: 'abc'
+      title: 'NEET',
+      price: '2000'
     },
     {
-      title: 'XXX',
-      caption: 'abc'
+      title: 'JEE MAIN 1',
+      price: '2000'
     },
     {
-      title: 'XXX',
-      caption: 'abc'
+      title: 'JEE MAIN 2',
+      price: '2000'
     },
     {
-      title: 'XXX',
-      caption: 'abc'
+      title: 'NEET 1',
+      price: '2000'
     },
     {
-      title: 'XXX',
-      caption: 'abc'
+      title: 'NEET 2',
+      price: '2000'
     }
   ]
   return (
@@ -35,26 +34,41 @@ function App() {
       <nav className="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
     <div className="container">
       <a className="navbar-brand js-scroll-trigger" href="#page-top">EDUCATION</a>
-      <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" >
         Menu
         <i className="fa fa-bars"></i>
       </button>
       <div className="collapse navbar-collapse" id="navbarResponsive">
         <ul className="navbar-nav text-uppercase ml-auto">
           <li className="nav-item">
-            <a className="nav-link js-scroll-trigger" href="#specializations">Specializations</a>
+            <a className="nav-link" aria-current="page" href="#">Home</a>
           </li>
           <li className="nav-item">
-            <a className="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>
+            <a className="nav-link" href="#">About Us</a>
           </li>
           <li className="nav-item">
-            <a className="nav-link js-scroll-trigger" href="#about">About Us</a>
+            <a className="nav-link" href="#">Features</a>
           </li>
           <li className="nav-item">
-            <a className="nav-link js-scroll-trigger" href="#team">Team</a>
+          <div class="dropdown">
+  <button class="btn btn-outline-light dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+    Test Packages
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+    <li><a class="dropdown-item" href="#">option 1</a></li>
+    <li><a class="dropdown-item" href="#">option 2</a></li>
+    <li><a class="dropdown-item" href="#">option 3</a></li>
+  </ul>
+</div>
           </li>
           <li className="nav-item">
-            <a className="nav-link js-scroll-trigger" href="#contact">Contact</a>
+            <a className="nav-link" href="#">Contact Us</a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="#">LOGIN</a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="#">REGISTER</a>
           </li>
         </ul>
       </div>
@@ -62,7 +76,7 @@ function App() {
   </nav>
 
   
-  <header className="masthead">
+  {/* <header className="masthead">
     <div className="container">
       <div className="intro-text">
         <div className="intro-lead-in">Welcome To Our Institute!</div>
@@ -70,221 +84,98 @@ function App() {
         <a className="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#specializations">Tell Me More</a>
       </div>
     </div>
-  </header>
-
+  </header> */}
+  <header className="mastHead">
+{/* <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://thevideoink.com/wp-content/uploads/2019/08/systemic-evaluation.jpg" class="d-block w-100" alt="1"></img>
+    </div>
+    <div class="carousel-item">
+      <img src="https://cdn.elearningindustry.com/wp-content/uploads/2019/01/5-ways-ai-is-changing-the-education-industry-1-1024x574.jpg" class="d-block w-100" alt="..."></img>
+    </div>
+    <div class="carousel-item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRCdJd5PQUMfWNMPo6dSQY4VsHQLBgW-66Kw&usqp=CAU" class="d-block w-100" alt="..."></img>
+    </div>
+  </div>
+  {/* <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button> 
+</div> */}
+<div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+  <div class="carousel-inner">
+  <div class="carousel-item active">
+      <img src="https://thevideoink.com/wp-content/uploads/2019/08/systemic-evaluation.jpg" class="d-block w-100" alt="1"></img>
+    </div>
+    <div class="carousel-item">
+      <img src="https://cdn.elearningindustry.com/wp-content/uploads/2019/01/5-ways-ai-is-changing-the-education-industry-1-1024x574.jpg" class="d-block w-100" alt="..."></img>
+    </div>
+    <div class="carousel-item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRCdJd5PQUMfWNMPo6dSQY4VsHQLBgW-66Kw&usqp=CAU" class="d-block w-100" alt="..."></img>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button> 
+</div>
+</header>
 
   
   <section className="page-section" id="specializations">
     <div className="container">
       <div className="row">
         <div className="col-lg-12 text-center">
-          <h2 className="section-heading text-uppercase">Specializations</h2>
-          <h3 className="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+          <h2 className="section-heading text-uppercase">Why Choose Us</h2>
+          <h3 className="text-primary">◆◆</h3>
+          <h3 className="section-subheading text-muted">See Why one should choose this platform for exam preparation.</h3>
         </div>
       </div>
-      <div className="row text-center">
-        <div className="col-md-4">
-          <span className="fa-stack fa-4x">
-            <i className="fa fa-circle fa-stack-2x text-primary"></i>
-            <i className="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
-          </span>
-          <h4 className="service-heading">Architecture</h4>
-          <p className="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+      <div className="row text-center grid">
+      <div class="card w-25 p-3 mh-100 g-col-6 g-col-md-4">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52aD4AiC1CI1oO6qKf4sn-YUC_5-NZIGOgmHJLOiHhAI6dPTG8LLIjyOklKe77GekYn4&usqp=CAU" class="card-img-top" alt="..."></img>
+        <div class="card-body">
+          <a class="card-title" href="#">UP-TO-DATE EXAM CONTENT</a>
+          <p class="card-text">Created by Exam Toppers, Experts and Top Faculty across the country. Comprehensive course material updated with latest exam patterns.</p>
         </div>
-        <div className="col-md-4">
-          <span className="fa-stack fa-4x">
-            <i className="fa fa-circle fa-stack-2x text-primary"></i>
-            <i className="fa fa-laptop fa-stack-1x fa-inverse"></i>
-          </span>
-          <h4 className="service-heading">Engineering</h4>
-          <p className="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+      </div>
+      <div class="card w-25 p-3 mh-100 g-col-6 g-col-md-4">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52aD4AiC1CI1oO6qKf4sn-YUC_5-NZIGOgmHJLOiHhAI6dPTG8LLIjyOklKe77GekYn4&usqp=CAU" class="card-img-top" alt="..."></img>
+        <div class="card-body">
+          <a class="card-title" href="#">UP-TO-DATE EXAM CONTENT</a>
+          <p class="card-text">Created by Exam Toppers, Experts and Top Faculty across the country. Comprehensive course material updated with latest exam patterns.</p>
         </div>
-        <div className="col-md-4">
-          <span className="fa-stack fa-4x">
-            <i className="fa fa-circle fa-stack-2x text-primary"></i>
-            <i className="fa fa-lock fa-stack-1x fa-inverse"></i>
-          </span>
-          <h4 className="service-heading">Medical</h4>
-          <p className="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+      </div>
+      <div class="card w-25 p-3 mh-100 g-col-6 g-col-md-4">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52aD4AiC1CI1oO6qKf4sn-YUC_5-NZIGOgmHJLOiHhAI6dPTG8LLIjyOklKe77GekYn4&usqp=CAU" class="card-img-top" alt="..."></img>
+        <div class="card-body">
+          <a class="card-title" href="#">UP-TO-DATE EXAM CONTENT</a>
+          <p class="card-text">Created by Exam Toppers, Experts and Top Faculty across the country. Comprehensive course material updated with latest exam patterns.</p>
         </div>
+      </div>
       </div>
     </div>
   </section>
 
-  <Portfolio portfolioLinks={portfolioLinks}></Portfolio>
+  <Courses portfolioLinks={portfolioLinks}></Courses>
 
 
   
-  <section className="page-section" id="about">
-    <div className="container">
-      <div className="row">
-        <div className="col-lg-12 text-center">
-          <h2 className="section-heading text-uppercase">About</h2>
-          <h3 className="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-        </div>
-      </div>
-      <div className="row">
-        <div className="col-lg-12">
-          <ul className="timeline">
-            <li>
-              <div className="timeline-image">
-                <img className="rounded-circle img-fluid" src="img/about/1.jpg" alt=""/>
-              </div>
-              <div className="timeline-panel">
-                <div className="timeline-heading">
-                  <h4>20XX-20XX</h4>
-                  <h4 className="subheading">Our Humble Beginnings</h4>
-                </div>
-                <div className="timeline-body">
-                  <p className="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                </div>
-              </div>
-            </li>
-            <li className="timeline-inverted">
-              <div className="timeline-image">
-                <img className="rounded-circle img-fluid" src="img/about/2.jpg" alt=""/>
-              </div>
-              <div className="timeline-panel">
-                <div className="timeline-heading">
-                  <h4>March 20XX</h4>
-                  <h4 className="subheading">Organization is Born</h4>
-                </div>
-                <div className="timeline-body">
-                  <p className="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div className="timeline-image">
-                <img className="rounded-circle img-fluid" src="img/about/3.jpg" alt=""/>
-              </div>
-              <div className="timeline-panel">
-                <div className="timeline-heading">
-                  <h4>December 20XX</h4>
-                  <h4 className="subheading">Transition to Full Service</h4>
-                </div>
-                <div className="timeline-body">
-                  <p className="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                </div>
-              </div>
-            </li>
-            <li className="timeline-inverted">
-              <div className="timeline-image">
-                <img className="rounded-circle img-fluid" src="img/about/4.jpg" alt=""/>
-              </div>
-              <div className="timeline-panel">
-                <div className="timeline-heading">
-                  <h4>July 20XX</h4>
-                  <h4 className="subheading">Phase Two Expansion</h4>
-                </div>
-                <div className="timeline-body">
-                  <p className="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                </div>
-              </div>
-            </li>
-            <li className="timeline-inverted">
-              <div className="timeline-image">
-                <h4>Be Part
-                  <br/>Of Our
-                  <br/>Story!</h4>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
   
-  <section className="bg-light page-section" id="team">
-    <div className="container">
-      <div className="row">
-        <div className="col-lg-12 text-center">
-          <h2 className="section-heading text-uppercase">Our Amazing Team</h2>
-          <h3 className="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-        </div>
-      </div>
-      <div className="row">
-        <div className="col-sm-4">
-          <div className="team-member">
-            <img className="mx-auto rounded-circle" src="img/team/1.jpg" alt=""/>
-            <h4>XYZ ABC</h4>
-            <p className="text-muted">HOD</p>
-            <ul className="list-inline social-buttons">
-              <li className="list-inline-item">
-                <a href="#something">
-                  <i className="fa fa-twitter"></i>
-                </a>
-              </li>
-              <li className="list-inline-item">
-                <a href="#something">
-                  <i className="fa fa-facebook-f"></i>
-                </a>
-              </li>
-              <li className="list-inline-item">
-                <a href="#something">
-                  <i className="fa fa-linkedin-in"></i>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div className="col-sm-4">
-          <div className="team-member">
-            <img className="mx-auto rounded-circle" src="img/team/2.jpg" alt=""/>
-            <h4>XYZ ABC</h4>
-            <p className="text-muted">Professor</p>
-            <ul className="list-inline social-buttons">
-              <li className="list-inline-item">
-                <a href="#something">
-                  <i className="fa fa-twitter"></i>
-                </a>
-              </li>
-              <li className="list-inline-item">
-                <a href="#something">
-                  <i className="fa fa-facebook-f"></i>
-                </a>
-              </li>
-              <li className="list-inline-item">
-                <a href="#something">
-                  <i className="fa fa-linkedin-in"></i>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div className="col-sm-4">
-          <div className="team-member">
-            <img className="mx-auto rounded-circle" src="img/team/3.jpg" alt=""/>
-            <h4>XYZ ABC</h4>
-            <p className="text-muted">Assistant Professor</p>
-            <ul className="list-inline social-buttons">
-              <li className="list-inline-item">
-                <a href="#something">
-                  <i className="fa fa-twitter"></i>
-                </a>
-              </li>
-              <li className="list-inline-item">
-                <a href="#something">
-                  <i className="fa fa-facebook-f"></i>
-                </a>
-              </li>
-              <li className="list-inline-item">
-                <a href="#something">
-                  <i className="fa fa-linkedin-in"></i>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div className="row">
-        <div className="col-lg-8 mx-auto text-center">
-          <p className="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
-        </div>
-      </div>
-    </div>
-  </section>
 
   
   <section className="py-5">
@@ -316,48 +207,50 @@ function App() {
 
   
   <section className="page-section" id="contact">
-    <div className="container">
-      <div className="row">
-        <div className="col-lg-12 text-center">
-          <h2 className="section-heading text-uppercase">Contact Us</h2>
-          <h3 className="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-        </div>
-      </div>
-      <div className="row">
-        <div className="col-lg-12">
-          <form id="contactForm" name="sentMessage" novalidate="novalidate">
-            <div className="row">
-              <div className="col-md-6">
-                <div className="form-group">
-                  <input className="form-control" id="name" type="text" placeholder="Your Name *" required="required" data-validation-required-message="Please enter your name."/>
-                  <p className="help-block text-danger"></p>
-                </div>
-                <div className="form-group">
-                  <input className="form-control" id="email" type="email" placeholder="Your Email *" required="required" data-validation-required-message="Please enter your email address."/>
-                  <p className="help-block text-danger"></p>
-                </div>
-                <div className="form-group">
-                  <input className="form-control" id="phone" type="tel" placeholder="Your Phone *" required="required" data-validation-required-message="Please enter your phone number."/>
-                  <p className="help-block text-danger"></p>
-                </div>
-              </div>
-              <div className="col-md-6">
-                <div className="form-group">
-                  <textarea className="form-control" id="message" placeholder="Your Message *" required="required" data-validation-required-message="Please enter a message."></textarea>
-                  <p className="help-block text-danger"></p>
-                </div>
-              </div>
-              <div className="clearfix"></div>
-              <div className="col-lg-12 text-center">
-                <div id="success"></div>
-                <button id="sendMessageButton" className="btn btn-primary btn-xl text-uppercase" type="submit">Send Message</button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
+    {/* <div>ABOUT US</div>
+    <p>We are passionate about our students advancing their careers through continued education. In fact, our Practice Question standard are higher than the average! Our motto is “Your Success is Our Success” for a reason: we strive to help students write their success stories and pursue their dreams.</p>
+   */}
+   <div class="container">
+  <div class="row">
+    <div class="col">
+    <div><h5 className="text-white">ABOUT US</h5></div>
+    <p className="text-white">We are passionate about our students advancing their careers through continued education.
+       In fact, our Practice Question standard are higher than the average!
+        Our motto is “Your Success is Our Success” for a reason:
+       we strive to help students write their success stories and pursue their dreams.</p>
+   
     </div>
-  </section>
+    <div class="col">
+    <div><h5 className="text-white">POPULAR PACKAGES</h5></div>
+    <div class="list-group">
+  <a href="#"  aria-current="true">NEET</a>
+  <a href="#" >JEE MAIN</a>
+  <a href="#">JEE MAIN 1</a>
+  <a href="#" >JEE MAIN 2</a>
+</div>
+    </div>
+    <div class="col">
+    <div><h5 className="text-white">QUICK LINKS</h5></div>
+    <div class="list-group">
+  <a href="#"  aria-current="true">HOME</a>
+  <a href="#" >ABOUT US</a>
+  <a href="#">FEATURES</a>
+  <a href="#" >TEST PACKAGES</a>
+  <a href="#" >CONTACT US</a>
+</div>
+    </div>
+    <div class="col">
+    <div><h5 className="text-white">CONTACT US</h5></div>
+    <p className="text-white"><div>Address : 3rd floor, RK Niwas, Bailey Rd, Rupaspur, Patna, Bihar 801503</div>
+
+<div>Phone: 7349762146</div>
+<div>Email: info@apnalifecare.com</div>
+<div>Website: exam.apnalifecare.com</div></p>
+   
+    </div>
+  </div>
+</div>
+   </section>
 
   
   <footer className="footer">
