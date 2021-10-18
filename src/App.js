@@ -1,7 +1,7 @@
 import React from 'react';
 import Courses from './components/Courses';
 import './App.css';
-
+//import { Button, Modal } from 'react-bootstrap';
 function App() {
   const portfolioLinks = [
     {
@@ -31,7 +31,7 @@ function App() {
   ]
   return (
     <div className="App">
-      <nav className="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="mainNav">
     <div className="container">
       <a className="navbar-brand js-scroll-trigger" href="#page-top">EDUCATION</a>
       <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" >
@@ -50,87 +50,103 @@ function App() {
             <a className="nav-link" href="#">Features</a>
           </li>
           <li className="nav-item">
-          <div class="dropdown">
-  <button class="btn btn-outline-light dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-    Test Packages
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-    <li><a class="dropdown-item" href="#">option 1</a></li>
-    <li><a class="dropdown-item" href="#">option 2</a></li>
-    <li><a class="dropdown-item" href="#">option 3</a></li>
-  </ul>
-</div>
+         
+  <div className="container-fluid">
+    
+    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span className="navbar-toggler-icon"></span>
+    </button>
+    <div className="collapse navbar-collapse" id="navbarNavDarkDropdown">
+      <ul className="navbar-nav">
+        <li className="nav-item dropdown">
+          <a className="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Test Packages
+          </a>
+          <ul className="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+            <li><a className="dropdown-item" href="#">Link 1</a></li>
+            <li><a className="dropdown-item" href="#">Link 2</a></li>
+            <li><a className="dropdown-item" href="#">Link 3</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+
           </li>
           <li className="nav-item">
             <a className="nav-link" href="#">Contact Us</a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#">LOGIN</a>
+          <div className="container-fluid">
+    
+    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span className="navbar-toggler-icon"></span>
+    </button>
+    <div className="collapse navbar-collapse" id="navbarNavDarkDropdown">
+      <ul className="navbar-nav">
+        <li className="nav-item dropdown">
+          <a className="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+           LOGIN
+          </a>
+          <ul className="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+            <li><a className="dropdown-item" href="#">Student Login</a></li>
+            <li><a className="dropdown-item" href="#">Admin Login</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+            
+            
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#">REGISTER</a>
+          <div className="container-fluid">
+    
+    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span className="navbar-toggler-icon"></span>
+    </button>
+    <div className="collapse navbar-collapse" id="navbarNavDarkDropdown">
+      <ul className="navbar-nav">
+        <li className="nav-item dropdown">
+          <a className="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            REGISTER
+          </a>
+          <ul className="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+            <li><a className="dropdown-item" href="#">Student Registration</a></li>
+            <li><a className="dropdown-item" href="#">Admin Registration</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
           </li>
         </ul>
       </div>
     </div>
   </nav>
+  
 
   
-  {/* <header className="masthead">
-    <div className="container">
-      <div className="intro-text">
-        <div className="intro-lead-in">Welcome To Our Institute!</div>
-        <div className="intro-heading text-uppercase">Nice To Meet You</div>
-        <a className="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#specializations">Tell Me More</a>
-      </div>
-    </div>
-  </header> */}
   <header className="mastHead">
-{/* <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-  </div>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="https://thevideoink.com/wp-content/uploads/2019/08/systemic-evaluation.jpg" class="d-block w-100" alt="1"></img>
+<div id="carouselExampleFade" className="carousel slide carousel-fade" data-bs-ride="carousel">
+  <div className="carousel-inner">
+  <div className="carousel-item active">
+      <img src="https://miro.medium.com/max/1400/1*YZjfn52wLI-l_ReW9928EA.jpeg" className="d-block w-100" alt="1"></img>
     </div>
-    <div class="carousel-item">
-      <img src="https://cdn.elearningindustry.com/wp-content/uploads/2019/01/5-ways-ai-is-changing-the-education-industry-1-1024x574.jpg" class="d-block w-100" alt="..."></img>
+    <div className="carousel-item">
+      <img src="https://images.theconversation.com/files/389548/original/file-20210315-17-jupa75.jpg?ixlib=rb-1.1.0&rect=0%2C5%2C1985%2C1299&q=45&auto=format&w=926&fit=clip" className="d-block w-100" alt="..."></img>
     </div>
-    <div class="carousel-item">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRCdJd5PQUMfWNMPo6dSQY4VsHQLBgW-66Kw&usqp=CAU" class="d-block w-100" alt="..."></img>
+    <div className="carousel-item">
+      <img src="https://etonbridgepartners.com/wp-content/uploads/2020/07/Emotional-intelligence-and-leading-through-uncertainty-782x504-1.jpg" className="d-block w-100" alt="..."></img>
     </div>
   </div>
-  {/* <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
+  <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span className="visually-hidden">Previous</span>
   </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button> 
-</div> */}
-<div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
-  <div class="carousel-inner">
-  <div class="carousel-item active">
-      <img src="https://thevideoink.com/wp-content/uploads/2019/08/systemic-evaluation.jpg" class="d-block w-100" alt="1"></img>
-    </div>
-    <div class="carousel-item">
-      <img src="https://cdn.elearningindustry.com/wp-content/uploads/2019/01/5-ways-ai-is-changing-the-education-industry-1-1024x574.jpg" class="d-block w-100" alt="..."></img>
-    </div>
-    <div class="carousel-item">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRCdJd5PQUMfWNMPo6dSQY4VsHQLBgW-66Kw&usqp=CAU" class="d-block w-100" alt="..."></img>
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
+  <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+    <span className="carousel-control-next-icon" aria-hidden="true"></span>
+    <span className="visually-hidden">Next</span>
   </button> 
 </div>
 </header>
@@ -145,39 +161,43 @@ function App() {
           <h3 className="section-subheading text-muted">See Why one should choose this platform for exam preparation.</h3>
         </div>
       </div>
-      <div className="row text-center grid">
-      <div class="card w-25 p-3 mh-100 g-col-6 g-col-md-4">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52aD4AiC1CI1oO6qKf4sn-YUC_5-NZIGOgmHJLOiHhAI6dPTG8LLIjyOklKe77GekYn4&usqp=CAU" class="card-img-top" alt="..."></img>
-        <div class="card-body">
-          <a class="card-title" href="#">UP-TO-DATE EXAM CONTENT</a>
-          <p class="card-text">Created by Exam Toppers, Experts and Top Faculty across the country. Comprehensive course material updated with latest exam patterns.</p>
+       <div className="d-flex justify-content-evenly">
+      <div className="card w-25 p-3 mh-100 ">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52aD4AiC1CI1oO6qKf4sn-YUC_5-NZIGOgmHJLOiHhAI6dPTG8LLIjyOklKe77GekYn4&usqp=CAU" className="card-img-top" alt="..."></img>
+        <div className="card-body">
+          <a className="card-title float-lg-start" href="#">UP-TO-DATE EXAM CONTENT</a>
+          <p className="card-text">Created by Exam Toppers, Experts and Top Faculty across the country. Comprehensive course material updated with latest exam patterns.</p>
         </div>
       </div>
-      <div class="card w-25 p-3 mh-100 g-col-6 g-col-md-4">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52aD4AiC1CI1oO6qKf4sn-YUC_5-NZIGOgmHJLOiHhAI6dPTG8LLIjyOklKe77GekYn4&usqp=CAU" class="card-img-top" alt="..."></img>
-        <div class="card-body">
-          <a class="card-title" href="#">UP-TO-DATE EXAM CONTENT</a>
-          <p class="card-text">Created by Exam Toppers, Experts and Top Faculty across the country. Comprehensive course material updated with latest exam patterns.</p>
+      <div className="card w-25 p-3 mh-100 g-col-6 g-col-md-4">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52aD4AiC1CI1oO6qKf4sn-YUC_5-NZIGOgmHJLOiHhAI6dPTG8LLIjyOklKe77GekYn4&usqp=CAU" className="card-img-top" alt="..."></img>
+        <div className="card-body">
+          <a className="card-title float-lg-start" href="#">UP-TO-DATE EXAM CONTENT</a>
+          <p className="card-text">Created by Exam Toppers, Experts and Top Faculty across the country. Comprehensive course material updated with latest exam patterns.</p>
         </div>
       </div>
-      <div class="card w-25 p-3 mh-100 g-col-6 g-col-md-4">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52aD4AiC1CI1oO6qKf4sn-YUC_5-NZIGOgmHJLOiHhAI6dPTG8LLIjyOklKe77GekYn4&usqp=CAU" class="card-img-top" alt="..."></img>
-        <div class="card-body">
-          <a class="card-title" href="#">UP-TO-DATE EXAM CONTENT</a>
-          <p class="card-text">Created by Exam Toppers, Experts and Top Faculty across the country. Comprehensive course material updated with latest exam patterns.</p>
+      <div className="card w-25 p-3 mh-100 g-col-6 g-col-md-4">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52aD4AiC1CI1oO6qKf4sn-YUC_5-NZIGOgmHJLOiHhAI6dPTG8LLIjyOklKe77GekYn4&usqp=CAU" className="card-img-top" alt="..."></img>
+        <div className="card-body">
+          <a className="card-title float-lg-start" href="#">UP-TO-DATE EXAM CONTENT</a>
+          <p className="card-text">Created by Exam Toppers, Experts and Top Faculty across the country. Comprehensive course material updated with latest exam patterns.</p>
         </div>
       </div>
+      <div className="card w-25 p-3 mh-100 g-col-6 g-col-md-4">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52aD4AiC1CI1oO6qKf4sn-YUC_5-NZIGOgmHJLOiHhAI6dPTG8LLIjyOklKe77GekYn4&usqp=CAU" className="card-img-top" alt="..."></img>
+        <div className="card-body">
+          <a className="card-title float-lg-start" href="#">UP-TO-DATE EXAM CONTENT</a>
+          <p className="card-text">Created by Exam Toppers, Experts and Top Faculty across the country. Comprehensive course material updated with latest exam patterns.</p>
+        </div>
       </div>
+      </div> 
     </div>
   </section>
+
 
   <Courses portfolioLinks={portfolioLinks}></Courses>
 
 
-  
-  
-
-  
   <section className="py-5">
     <div className="container">
       <div className="row">
@@ -207,12 +227,9 @@ function App() {
 
   
   <section className="page-section" id="contact">
-    {/* <div>ABOUT US</div>
-    <p>We are passionate about our students advancing their careers through continued education. In fact, our Practice Question standard are higher than the average! Our motto is “Your Success is Our Success” for a reason: we strive to help students write their success stories and pursue their dreams.</p>
-   */}
-   <div class="container">
-  <div class="row">
-    <div class="col">
+   <div className="container">
+  <div className="row">
+    <div className="col">
     <div><h5 className="text-white">ABOUT US</h5></div>
     <p className="text-white">We are passionate about our students advancing their careers through continued education.
        In fact, our Practice Question standard are higher than the average!
@@ -220,18 +237,18 @@ function App() {
        we strive to help students write their success stories and pursue their dreams.</p>
    
     </div>
-    <div class="col">
+    <div className="col">
     <div><h5 className="text-white">POPULAR PACKAGES</h5></div>
-    <div class="list-group">
+    <div className="list-group">
   <a href="#"  aria-current="true">NEET</a>
   <a href="#" >JEE MAIN</a>
   <a href="#">JEE MAIN 1</a>
   <a href="#" >JEE MAIN 2</a>
 </div>
     </div>
-    <div class="col">
+    <div className="col">
     <div><h5 className="text-white">QUICK LINKS</h5></div>
-    <div class="list-group">
+    <div className="list-group">
   <a href="#"  aria-current="true">HOME</a>
   <a href="#" >ABOUT US</a>
   <a href="#">FEATURES</a>
@@ -239,7 +256,7 @@ function App() {
   <a href="#" >CONTACT US</a>
 </div>
     </div>
-    <div class="col">
+    <div className="col">
     <div><h5 className="text-white">CONTACT US</h5></div>
     <p className="text-white"><div>Address : 3rd floor, RK Niwas, Bailey Rd, Rupaspur, Patna, Bihar 801503</div>
 
