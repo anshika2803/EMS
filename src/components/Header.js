@@ -134,8 +134,7 @@ import { Navbar } from 'react-bootstrap';
 
             <Modal open={sign} onClose={this.onCloseModal}>
                     <div className="modal-body">
-                        <h2>Get Started Absolutely<span> Free!</span></h2>
-                        <span className="subtitle">No credit card needed</span>
+                        <h2>Sign Up</h2>
                         <form className="contact-form form-validate3" novalidate="novalidate">
                             <div className="form-group">
                                 <input className="form-control" type="text" name="name" id="name" placeholder="First Name" required="" autocomplete="off" aria-required="true" />
@@ -158,7 +157,6 @@ import { Navbar } from 'react-bootstrap';
                 
                 <div className="modal-body">
                     <h2>Login and Get <span>Started</span></h2>
-                    <span className="subtitle">Just fill in the form below</span>
                     <form className="contact-form form-validate4" novalidate="novalidate">
                         <div className="form-group">
                             <input className="form-control" type="email" name="email" placeholder="E-mail" required="" autocomplete="off" aria-required="true" />
