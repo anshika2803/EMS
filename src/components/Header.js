@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+
 import Modal from "react-responsive-modal";
 import "./css/style.css";
 import "react-responsive-modal/styles.css";
@@ -107,6 +109,17 @@ const Headerr = () => {
               <a className="nav-link" href="#">
                 Contact Us
               </a>
+            </li>
+            <li className="nav-item">
+              <Link
+                className="nav-link"
+                to="/dashboard"
+                // className="nav-link scrollto"
+                // data-bs-toggle="modal"
+                // data-bs-target="#loginmod"
+              >
+                Dashboard
+              </Link>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#" onClick={onOpenSignupModal}>
