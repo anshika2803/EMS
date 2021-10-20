@@ -1,12 +1,9 @@
-import React, { Component } from 'react'
-import Modal from "react-responsive-modal";
-import './css/style.css'
-import icon from './assets/logo-hover.png'
+ import React, { Component } from 'react'
+ import Modal from "react-responsive-modal";
+ import './css/style.css'
 import { Navbar } from 'react-bootstrap';
-//import { render } from '@testing-library/react';
 
-class Header extends Component {
-
+ class Header extends Component {
     constructor(props) {
         super(props)
 
@@ -33,63 +30,48 @@ class Header extends Component {
         this.setState({ login: false });
     };
 
-
-
-
-    render() {
+    render(){
         const { login, sign } = this.state;
-        return (
-
-            <>
-                <header className="header header-animated opaque" style={{ "display": 'block', "paddingTop": "5px", "paddingBottom": "5px" }}>
-                    <div className="container">
-                        <nav className="navbar navbar-default" role="navigation">
-                            <div className="navbar-header">
-                                <a className="logo" href="#">
-                                <img className="img-responsive logo" src={icon} alt="" data-logo-alt={icon} />
-                                </a>
-                            </div>
-
-
-                            <div className="nav-toggle collapsed" data-toggle="collapse" data-target="#navbarMain" aria-expanded="false" style={{ "top": "15px" }}>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </div>
-                            {/* <!-- Collect the nav links, forms, and other content for toggling --> */}
-                            <div className="navbar-collapse collapse in" id="navbarMain" aria-expanded="true" style={{ top: "65px" }}>
-
-                                <ul className="nav navbar-nav navbar-right">
-                                    <li>
-                                        <button className="btn btn-primary-outline" id="signup" onClick={this.onOpenModal}>SignUp</button>
-                                    </li>
-                                    <li>
-                                        <button className="btn btn-primary-outline" id="login" onClick={this.onOpenModalLogin}>Login</button>
-                                    </li>
-                                </ul>
-                                <ul className="nav navbar-nav collapsed-color">
-
-                                <li className="nav-item">
-               <a className="nav-link" aria-current="page" href="#">
-                 Home
-               </a>
-             </li>
-             <li className="nav-item">
-               <a className="nav-link" href="#">
-                 About Us
-               </a>
-             </li>
-             <li className="nav-item">
-               <a className="nav-link" href="#">
-                 Features
-               </a>
-             </li>
-             <li className="nav-item">
-               <div className="container-fluid">
-                 <button
+  return (
+    <nav
+      className="navbar navbar-expand-lg navbar-dark bg-primary fixed-top"
+      id="mainNav"
+    >
+      <div className="container">
+        <a className="navbar-brand js-scroll-trigger" href="#page-top">
+          EDUCATION
+        </a>
+        <button
+          className="navbar-toggler navbar-toggler-right"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+        >
+          Menu
+          <i className="fa fa-bars"></i>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarResponsive">
+          <ul className="navbar-nav text-uppercase ml-auto">
+            <li className="nav-item">
+              <a className="nav-link" aria-current="page" href="#">
+                Home
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#">
+                About Us
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#">
+                Features
+              </a>
+            </li>
+            <li className="nav-item">
+              <div className="container-fluid">
+                <button
                   className="navbar-toggler"
                   type="button"
                   data-bs-toggle="collapse"
@@ -146,20 +128,14 @@ class Header extends Component {
                 Contact Us
               </a>
             </li>
+            
 
-                                </ul>
+            {/* Sign up model */}
 
-                            </div>
-
-                            {/* <!-- .navbar-collapse --> */}
-                        </nav>
-                    </div>
-
-                </header>
-                {/* Sign up model */}
-
-                <Modal open={sign} onClose={this.onCloseModal}>
+            <Modal open={sign} onClose={this.onCloseModal}>
                     <div className="modal-body">
+                        <h2>Get Started Absolutely<span> Free!</span></h2>
+                        <span className="subtitle">No credit card needed</span>
                         <form className="contact-form form-validate3" novalidate="novalidate">
                             <div className="form-group">
                                 <input className="form-control" type="text" name="name" id="name" placeholder="First Name" required="" autocomplete="off" aria-required="true" />
@@ -175,30 +151,31 @@ class Header extends Component {
                     </div>
                 </Modal>
 
-                {/* <!-- signUp End -->
-                  <!-- login --> */}
+                {/* <!-- signUp End --> 
+                 <!-- login --> */}
 
-                <Modal open={login} onClose={this.onCloseModalclose}>
+            <Modal open={login} onClose={this.onCloseModalclose}>
                 
-                    <div className="modal-body">
-                        <form className="contact-form form-validate4" novalidate="novalidate">
-                            <div className="form-group">
-                                <input className="form-control" type="email" name="email" placeholder="E-mail" required="" autocomplete="off" aria-required="true" />
-                            </div>
-                            <div className="form-group">
-                                <input type="password" name="pass" className="form-control" placeholder="Password" required="" autocomplete="off" aria-required="true" />
-                            </div>
-                            <input className="btn btn-md btn-primary btn-center" id="login_btn" type="button" value="Login" />
-                        </form>
-                    </div>
-                </Modal>
-            </>
-
-        );
-    }
+                <div className="modal-body">
+                    <h2>Login and Get <span>Started</span></h2>
+                    <span className="subtitle">Just fill in the form below</span>
+                    <form className="contact-form form-validate4" novalidate="novalidate">
+                        <div className="form-group">
+                            <input className="form-control" type="email" name="email" placeholder="E-mail" required="" autocomplete="off" aria-required="true" />
+                        </div>
+                        <div className="form-group">
+                            <input type="password" name="pass" className="form-control" placeholder="Password" required="" autocomplete="off" aria-required="true" />
+                        </div>
+                        <input className="btn btn-md btn-primary btn-center" id="login_btn" type="button" value="Login" />
+                    </form>
+                </div>
+            </Modal>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  );
 }
-
-
-
+}
 
 export default Header;
