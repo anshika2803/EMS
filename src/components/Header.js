@@ -112,7 +112,7 @@ const Headerr = () => {
             </li>
             <li className="nav-item">
               <Link
-                className="nav-link"
+                className="nav-link text-red-800"
                 to="/dashboard"
                 // className="nav-link scrollto"
                 // data-bs-toggle="modal"

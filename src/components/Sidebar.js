@@ -1,16 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-// import { RiDashboardLine } from "react-icons/ri";
-// import { FiMenu } from "react-icons/fi";
-
 const Sidebar = () => {
-  const [open, setOpen] = useState(false);
-
   const sidebarList = [
     {
       name: "Home",
-      //   icon: <RiDashboardLine />,
       notificationCount: 0,
       link: "",
     },
@@ -23,6 +17,7 @@ const Sidebar = () => {
     { name: "Payments", notificationCount: 0, link: "payments" },
   ];
 
+  const [open, setOpen] = useState(false);
   // console.log(open);
   return (
     <>
@@ -44,7 +39,9 @@ const Sidebar = () => {
                   <li className="flex w-full justify-between text-gray-300 hover:text-gray-500 cursor-pointer items-center mb-6">
                     <div className="flex items-center">
                       {item.icon}
-                      <span className="text-sm  ml-2">{item.name}</span>
+                      <span className="text-sm text-red-800 ml-2">
+                        {item.name}
+                      </span>
                     </div>
                     {item.notificationCount > 0 && (
                       <div className="py-1 px-3 bg-gray-700 rounded text-gray-500 flex items-center justify-center text-xs">
@@ -67,9 +64,7 @@ const Sidebar = () => {
       </div>
       <div className=" relative sm:relative bg-gray-800 shadow md:h-full flex-col justify-between flex sm:hidden">
         <div className="absolute -right-4 bg-gray-800 shadow px-1">
-          <button onClick={() => setOpen(!open)}>
-            {/* <FiMenu className="text-white" /> */}
-          </button>
+          <button onClick={() => setOpen(!open)}></button>
         </div>
       </div>
       {/* <div
