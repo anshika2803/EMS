@@ -22,14 +22,23 @@ const Sidebar = () => {
   return (
     <>
       {/* Sidebar starts */}
-      {/* Remove class [ hidden ] and replace [ sm:flex ] with [ flex ] */}
+      {/* Remove className [ hidden ] and replace [ sm:flex ] with [ flex ] */}
       <div
         className={`${
           open ? "sm:flex" : "hidden"
-        }  w-64 absolute mt-16 sm:relative bg-gray-800 shadow md:h-full flex-col justify-between  sm:flex h-screen pb-72`}
+        }  w-1/6 absolute sm:relative bg-gray-800 shadow md:h-full flex-col justify-between  sm:flex h-screen pb-72 bg-white`}
       >
-        <div className="px-8 ">
-          <div className="h-16 w-full pt-5 mt-1.5 flex items-center flex-col">
+        <div className="px-3 ">
+          <div className="w-full mt-1.5 flex items-center flex-col">
+            <div className=" w-12 h-12">
+              <img
+                className="rounded-full border border-gray-100 shadow-sm"
+                src="https://randomuser.me/api/portraits/women/81.jpg"
+                alt="user "
+              />
+            </div>
+            <div className=" h-3 w-3 my-1 border-2 border-white rounded-full bg-green-400 z-2"></div>
+
             <span className="text-sm">uid</span>
           </div>
           <ul className="mt-12">
@@ -207,7 +216,7 @@ const Sidebar = () => {
         </div>
       </div> */}
       {/* Sidebar ends */}
-      {/* Remove class [ h-64 ] when adding a card block */}
+      {/* Remove className [ h-64 ] when adding a card block */}
     </>
   );
 };
