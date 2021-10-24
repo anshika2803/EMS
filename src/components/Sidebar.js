@@ -13,16 +13,22 @@ const Sidebar = () => {
     },
     {
       name: "Misc",
-      notificationCount: 0,
+
       link: "dashboard",
       moreOptions: true,
     },
     { name: "Students", notificationCount: 2, link: "dashboard" },
 
-    { name: "Shopping", notificationCount: 0, link: "dashboard" },
-    { name: "Store", notificationCount: 0, link: "dashboard" },
-    { name: "Institute", notificationCount: 0, link: "dashboard" },
-    { name: "Manage Test", notificationCount: 0, link: "dashboard" },
+    { name: "Shopping", link: "dashboard" },
+    { name: "Store", link: "dashboard" },
+    { name: "Institute", link: "dashboard" },
+    { name: "Manage Test", link: "dashboard" },
+    {
+      name: "Homepage",
+
+      moreOptions: false,
+      link: "",
+    },
   ];
 
   const [open, setOpen] = useState(false);
@@ -72,13 +78,6 @@ const Sidebar = () => {
                 </Link>
               );
             })}
-            <li className="flex w-full justify-between text-gray-300 hover:text-gray-500 cursor-pointer items-center mb-6">
-              <div className="flex items-center">
-                <Link to="/login">
-                  <span className="text-sm  ml-2">Logout</span>
-                </Link>
-              </div>
-            </li>
           </ul>
         </div>
       </div>
