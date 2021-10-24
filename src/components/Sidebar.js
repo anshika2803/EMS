@@ -1,75 +1,89 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-
-// import { RiDashboardLine } from "react-icons/ri";
-// import { FiMenu } from "react-icons/fi";
+import { RiDashboardLine } from "react-icons/ri";
+import { AiOutlineLeft } from "react-icons/ai";
 
 const Sidebar = () => {
-  const [open, setOpen] = useState(false);
-
   const sidebarList = [
     {
-      name: "Home",
-      //   icon: <RiDashboardLine />,
-      notificationCount: 0,
+      name: "Dashboard",
+      icon: <RiDashboardLine />,
+      moreOptions: false,
+      link: "dashboard",
+    },
+    {
+      name: "Misc",
+
+      link: "dashboard",
+      moreOptions: true,
+    },
+    { name: "Students", notificationCount: 2, link: "dashboard" },
+
+    { name: "Shopping", link: "dashboard" },
+    { name: "Store", link: "dashboard" },
+    { name: "Institute", link: "dashboard" },
+    { name: "Manage Test", link: "dashboard" },
+    {
+      name: "Homepage",
+
+      moreOptions: false,
       link: "",
     },
-    { name: "Profile", notificationCount: 2, link: "dashboard" },
-    { name: "Listed Spaces", notificationCount: 0, link: "listedspaces" },
-
-    { name: "Interested Customers", notificationCount: 0, link: "" },
-    { name: "Add Space", notificationCount: 0, link: "addspace" },
-    { name: "Calendar", notificationCount: 0, link: "dashboard" },
-    { name: "Payments", notificationCount: 0, link: "payments" },
   ];
 
+  const [open, setOpen] = useState(false);
   // console.log(open);
   return (
     <>
       {/* Sidebar starts */}
-      {/* Remove class [ hidden ] and replace [ sm:flex ] with [ flex ] */}
+      {/* Remove className [ hidden ] and replace [ sm:flex ] with [ flex ] */}
       <div
         className={`${
           open ? "sm:flex" : "hidden"
-        }  w-64 absolute mt-16 sm:relative bg-gray-800 shadow md:h-full flex-col justify-between  sm:flex h-screen pb-72`}
+        }  w-1/6 absolute sm:relative shadow md:h-full flex-col justify-between  sm:flex h-screen pb-72 bg-white`}
       >
-        <div className="px-8 ">
-          <div className="h-16 w-full pt-5 mt-1.5 flex items-center flex-col">
-            <span className="text-sm">uid</span>
+        <div className="px-3 ">
+          <div className="w-full mt-1.5 flex items-center flex-row">
+            <div className=" w-20 h-20">
+              <img
+                className="rounded-full border border-gray-100 shadow-sm"
+                src="https://randomuser.me/api/portraits/women/81.jpg"
+                alt="user "
+              />
+            </div>
+            <div className="ml-2">
+              <h1 className="text-lg font-medium ml-0.5 mb-0">Akash</h1>
+              <div className="flex flex-row">
+                <div className=" h-3 w-3 my-1 border-2 border-white rounded-full bg-green-400 "></div>
+                <span className="text-sm ml-0.5"> Online</span>
+              </div>
+            </div>
           </div>
-          <ul className="mt-12">
+          <ul className="mt-6 ">
+            <p className="text-gray-500 mb-4">MAIN NAVIGATION</p>
             {sidebarList.map((item, index) => {
               return (
-                <Link to={`/${item.link}`}>
-                  <li className="flex w-full justify-between text-gray-300 hover:text-gray-500 cursor-pointer items-center mb-6">
-                    <div className="flex items-center">
+                <Link to={`/${item.link}`} className="hover:no-underline">
+                  <li className="flex w-full justify-between text-gray-700 hover:text-gray-900 cursor-pointer items-center mb-6">
+                    <div className="flex items-center font-semibold">
                       {item.icon}
-                      <span className="text-sm  ml-2">{item.name}</span>
+                      <span className="text-sm ml-2 ">{item.name}</span>
                     </div>
-                    {item.notificationCount > 0 && (
-                      <div className="py-1 px-3 bg-gray-700 rounded text-gray-500 flex items-center justify-center text-xs">
-                        {item.notificationCount}
+                    {item.moreOptions > 0 && (
+                      <div className="py-1 px-3 rounded text-gray-500 flex items-center justify-center">
+                        <AiOutlineLeft />
                       </div>
                     )}
                   </li>
                 </Link>
               );
             })}
-            <li className="flex w-full justify-between text-gray-300 hover:text-gray-500 cursor-pointer items-center mb-6">
-              <div className="flex items-center">
-                <Link to="/login">
-                  <span className="text-sm  ml-2">Logout</span>
-                </Link>
-              </div>
-            </li>
           </ul>
         </div>
       </div>
       <div className=" relative sm:relative bg-gray-800 shadow md:h-full flex-col justify-between flex sm:hidden">
         <div className="absolute -right-4 bg-gray-800 shadow px-1">
-          <button onClick={() => setOpen(!open)}>
-            {/* <FiMenu className="text-white" /> */}
-          </button>
+          <button onClick={() => setOpen(!open)}></button>
         </div>
       </div>
       {/* <div
@@ -212,7 +226,7 @@ const Sidebar = () => {
         </div>
       </div> */}
       {/* Sidebar ends */}
-      {/* Remove class [ h-64 ] when adding a card block */}
+      {/* Remove className [ h-64 ] when adding a card block */}
     </>
   );
 };
