@@ -1,220 +1,295 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import React, { Component } from 'react'
 
-// import { RiDashboardLine } from "react-icons/ri";
-// import { FiMenu } from "react-icons/fi";
-
-const Sidebar = () => {
-  const [open, setOpen] = useState(false);
-
-  const sidebarList = [
-    {
-      name: "Home",
-      //   icon: <RiDashboardLine />,
-      notificationCount: 0,
-      link: "",
-    },
-    { name: "Profile", notificationCount: 2, link: "dashboard" },
-    { name: "Listed Spaces", notificationCount: 0, link: "listedspaces" },
-
-    { name: "Interested Customers", notificationCount: 0, link: "" },
-    { name: "Add Space", notificationCount: 0, link: "addspace" },
-    { name: "Calendar", notificationCount: 0, link: "dashboard" },
-    { name: "Payments", notificationCount: 0, link: "payments" },
-  ];
-
-  // console.log(open);
-  return (
-    <>
-      {/* Sidebar starts */}
-      {/* Remove class [ hidden ] and replace [ sm:flex ] with [ flex ] */}
-      <div
-        className={`${
-          open ? "sm:flex" : "hidden"
-        }  w-64 absolute mt-16 sm:relative bg-gray-800 shadow md:h-full flex-col justify-between  sm:flex h-screen pb-72`}
-      >
-        <div className="px-8 ">
-          <div className="h-16 w-full pt-5 mt-1.5 flex items-center flex-col">
-            <span className="text-sm">uid</span>
-          </div>
-          <ul className="mt-12">
-            {sidebarList.map((item, index) => {
-              return (
-                <Link to={`/${item.link}`}>
-                  <li className="flex w-full justify-between text-gray-300 hover:text-gray-500 cursor-pointer items-center mb-6">
-                    <div className="flex items-center">
-                      {item.icon}
-                      <span className="text-sm  ml-2">{item.name}</span>
-                    </div>
-                    {item.notificationCount > 0 && (
-                      <div className="py-1 px-3 bg-gray-700 rounded text-gray-500 flex items-center justify-center text-xs">
-                        {item.notificationCount}
-                      </div>
-                    )}
-                  </li>
-                </Link>
-              );
-            })}
-            <li className="flex w-full justify-between text-gray-300 hover:text-gray-500 cursor-pointer items-center mb-6">
-              <div className="flex items-center">
-                <Link to="/login">
-                  <span className="text-sm  ml-2">Logout</span>
-                </Link>
-              </div>
-            </li>
-          </ul>
+export default class Sidebar extends Component {
+    render() {
+        return (
+          <div>
+  <aside className="main-sidebar sidebar-dark-primary elevation-4">
+    {/* Brand Logo */}
+    <a href="index3.html" className="brand-link">
+      {/* <img src="" alt="Logo" className="brand-image img-circle elevation-3" style={{opacity: '.8'}} /> */}
+      <span className="brand-text text-center">Ravionics</span>
+    </a>
+    {/* Sidebar */}
+    <div className="sidebar">
+      {/* Sidebar user panel (optional) */}
+      <div className="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div className="image">
+          <img src="dist/img/user2-160x160.jpg" className="img-circle elevation-2" alt="User Image" />
+        </div>
+        <div className="info">
+          <a href="#" className="d-block">Username</a>
         </div>
       </div>
-      <div className=" relative sm:relative bg-gray-800 shadow md:h-full flex-col justify-between flex sm:hidden">
-        <div className="absolute -right-4 bg-gray-800 shadow px-1">
-          <button onClick={() => setOpen(!open)}>
-            {/* <FiMenu className="text-white" /> */}
-          </button>
-        </div>
-      </div>
-      {/* <div
-        className={`${
-          open ? "flex" : "hidden"
-        } w-64 z-40 absolute bg-gray-800 shadow md:h-full flex-col justify-between sm:hidden  transition duration-150 ease-in-out`}
-        id="mobile-nav"
-      >
-        <div
-          className="h-10 w-10 bg-gray-800 absolute right-0 mt-16 -mr-10 flex items-center shadow rounded-tr rounded-br justify-center cursor-pointer"
-          id="mobile-toggler"
-          onClick={() => setOpen(!open)}
-        >
-          <FiMenu className="text-white" />
-        </div>
-        <div className="px-8">
-          <div className="h-16 w-full flex items-center">
-            <h1 className="text-4xl text-white">Name</h1>
-          </div>
-          <ul className="mt-12">
-            {sidebarList.map((item, index) => {
-              return (
-                <li className="flex w-full justify-between text-gray-300 hover:text-gray-500 cursor-pointer items-center mb-6">
-                  <div className="flex items-center">
-                    <span className="text-sm  ml-2">{item.name}</span>
-                  </div>
-                  {item.notificationCount > 0 && (
-                    <div className="py-1 px-3 bg-gray-700 rounded text-gray-500 flex items-center justify-center text-xs">
-                      {item.notificationCount}
-                    </div>
-                  )}
-                </li>
-              );
-            })}
-          </ul>
-          <div className="flex justify-center mt-48 mb-4 w-full">
-            <div className="relative ">
-              <div className="text-gray-500 absolute ml-4 inset-0 m-auto w-4 h-4">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="icon icon-tabler icon-tabler-search"
-                  width={16}
-                  height={16}
-                  viewBox="0 0 24 24"
-                  strokeWidth="1.5"
-                  stroke="currentColor"
-                  fill="none"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path stroke="none" d="M0 0h24v24H0z" />
-                  <circle cx={10} cy={10} r={7} />
-                  <line x1={21} y1={21} x2={15} y2={15} />
-                </svg>
-              </div>
-              <input
-                className=" bg-gray-700 focus:outline-none rounded w-full text-sm text-gray-500 bg-gray-100 pl-10 py-2"
-                type="text"
-                placeholder="Search"
-              />
-            </div>
-          </div>
-        </div>
-        <div className="px-8 border-t border-gray-700">
-          <ul className="w-full flex items-center justify-between bg-gray-800">
-            <li className="cursor-pointer text-white pt-5 pb-3">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="icon icon-tabler icon-tabler-bell"
-                width={20}
-                height={20}
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="currentColor"
-                fill="none"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path stroke="none" d="M0 0h24v24H0z" />
-                <path d="M10 5a2 2 0 0 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6" />
-                <path d="M9 17v1a3 3 0 0 0 6 0v-1" />
-              </svg>
-            </li>
-            <li className="cursor-pointer text-white pt-5 pb-3">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="icon icon-tabler icon-tabler-messages"
-                width={20}
-                height={20}
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="currentColor"
-                fill="none"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path stroke="none" d="M0 0h24v24H0z" />
-                <path d="M21 14l-3 -3h-7a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1h9a1 1 0 0 1 1 1v10" />
-                <path d="M14 15v2a1 1 0 0 1 -1 1h-7l-3 3v-10a1 1 0 0 1 1 -1h2" />
-              </svg>
-            </li>
-            <li className="cursor-pointer text-white pt-5 pb-3">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="icon icon-tabler icon-tabler-settings"
-                width={20}
-                height={20}
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="currentColor"
-                fill="none"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path stroke="none" d="M0 0h24v24H0z" />
-                <path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-                <circle cx={12} cy={12} r={3} />
-              </svg>
-            </li>
-            <li className="cursor-pointer text-white pt-5 pb-3">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="icon icon-tabler icon-tabler-archive"
-                width={20}
-                height={20}
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="currentColor"
-                fill="none"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path stroke="none" d="M0 0h24v24H0z" />
-                <rect x={3} y={4} width={18} height={4} rx={2} />
-                <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
-                <line x1={10} y1={12} x2={14} y2={12} />
-              </svg>
-            </li>
-          </ul>
-        </div>
-      </div> */}
-      {/* Sidebar ends */}
-      {/* Remove class [ h-64 ] when adding a card block */}
-    </>
-  );
-};
+      {/* Sidebar Menu */}
+      <nav className="mt-2">
+        <ul className="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          
+          <a href="#" className="nav-link active">
+              <i className="nav-icon fas fa-tachometer-alt" />
+              <p>
+                Dashboard
+                {/* <i className="right fas fa-angle-left" /> */}
+              </p>
+            </a>
+          <li className="nav-item">
+            <a href="pages/widgets.html" className="nav-link">
+              <i className="nav-icon fas fa-chart-pie" />
+              <p>
+                Misc
+                {/* <span className="right badge badge-danger">New</span> */}
+                <i className="right fas fa-angle-left" />
+              </p>
+            </a>
+          </li>
+          <li className="nav-item">
+            <a href="pages/widgets.html" className="nav-link">
+              <i className="nav-icon fas fa-user-graduate" />
+              <p>
+                Students
+              </p>
+            </a>
+          </li>
+          <li className="nav-item has-treeview">
+            <a href="#" className="nav-link">
+              <i className="nav-icon fas fa-shopping-bag" />
+              <p>
+                Shopping
+                <i className="fas fa-angle-left right" />
+                <span className="badge badge-info right">6</span>
+              </p>
+            </a>
+            <ul className="nav nav-treeview">
+              <li className="nav-item">
+                <a href="pages/layout/top-nav.html" className="nav-link">
+                  <i className="far fa-circle nav-icon" />
+                  <p>1</p>
+                </a>
+              </li>
+              <li className="nav-item">
+                <a href="" className="nav-link">
+                  <i className="far fa-circle nav-icon" />
+                  <p>2</p>
+                </a>
+              </li>
+              <li className="nav-item">
+                <a href="" className="nav-link">
+                  <i className="far fa-circle nav-icon" />
+                  <p>3</p>
+                </a>
+              </li>
+              <li className="nav-item">
+                <a href="" className="nav-link">
+                  <i className="far fa-circle nav-icon" />
+                  <p>4</p>
+                </a>
+              </li>
+              <li className="nav-item">
+                <a href="" className="nav-link">
+                  <i className="far fa-circle nav-icon" />
+                  <p>5</p>
+                </a>
+              </li>
+              <li className="nav-item">
+                <a href="" className="nav-link">
+                  <i className="far fa-circle nav-icon" />
+                  <p>6</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li className="nav-item">
+            <a href="pages/widgets.html" className="nav-link">
+              <i className="nav-icon fas fa-shopping-bag" />
+              <p>
+                Store
+              </p>
+            </a>
+          </li>
+          <li className="nav-item has-treeview">
+            <a href="#" className="nav-link">
+              <i className="nav-icon fas fa-university" />
+              <p>
+                Institute
+                <i className="right fas fa-angle-left" />
+              </p>
+            </a>
+            <ul className="nav nav-treeview">
+              <li className="nav-item">
+                <a href="" className="nav-link">
+                  <i className="far fa-circle nav-icon" />
+                  <p>Institute 1</p>
+                </a>
+              </li>
+              <li className="nav-item">
+                <a href="" className="nav-link">
+                  <i className="far fa-circle nav-icon" />
+                  <p>Institute 2</p>
+                </a>
+              </li>
+              <li className="nav-item">
+                <a href="" className="nav-link">
+                  <i className="far fa-circle nav-icon" />
+                  <p>Institute 3</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li className="nav-item has-treeview">
+            <a href="#" className="nav-link">
+              <i className="nav-icon fas fa-question-circle" />
+              <p>
+                Manage Questions
+                <i className="fas fa-angle-left right" />
+              </p>
+            </a>
+            <ul className="nav nav-treeview">
+              <li className="nav-item">
+                <a href="pages/UI/general.html" className="nav-link">
+                  <i className="far fa-circle nav-icon" />
+                  <p>Q1</p>
+                </a>
+              </li>
+              <li className="nav-item">
+                <a href="pages/UI/icons.html" className="nav-link">
+                  <i className="far fa-circle nav-icon" />
+                  <p>Q2</p>
+                </a>
+              </li>
+              <li className="nav-item">
+                <a href="pages/UI/buttons.html" className="nav-link">
+                  <i className="far fa-circle nav-icon" />
+                  <p>Q3</p>
+                </a>
+              </li>
+              <li className="nav-item">
+                <a href="pages/UI/sliders.html" className="nav-link">
+                  <i className="far fa-circle nav-icon" />
+                  <p>Q4</p>
+                </a>
+              </li>
+              <li className="nav-item">
+                <a href="pages/UI/modals.html" className="nav-link">
+                  <i className="far fa-circle nav-icon" />
+                  <p>Q5</p>
+                </a>
+              </li>
+              <li className="nav-item">
+                <a href="pages/UI/navbar.html" className="nav-link">
+                  <i className="far fa-circle nav-icon" />
+                  <p>Q6</p>
+                </a>
+              </li>
+              
+            </ul>
+          </li>
+          <li className="nav-item has-treeview">
+            <a href="#" className="nav-link">
+              <i className="nav-icon fas fa-chart-pie" />
+              <p>
+                Manage Test
+                <i className="fas fa-angle-left right" />
+              </p>
+            </a>
+            <ul className="nav nav-treeview">
+              <li className="nav-item">
+                <a href="pages/forms/general.html" className="nav-link">
+                  <i className="far fa-circle nav-icon" />
+                  <p>Test 1</p>
+                </a>
+              </li>
+              <li className="nav-item">
+                <a href="pages/forms/advanced.html" className="nav-link">
+                  <i className="far fa-circle nav-icon" />
+                  <p>Test 2</p>
+                </a>
+              </li>
+              <li className="nav-item">
+                <a href="pages/forms/editors.html" className="nav-link">
+                  <i className="far fa-circle nav-icon" />
+                  <p>Test 3</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li className="nav-item has-treeview">
+            <a href="#" className="nav-link">
+              <i className="nav-icon fas fa-play-circle" />
+              <p>
+                Manage Videos
+                <i className="fas fa-angle-left right" />
+              </p>
+            </a>
+            <ul className="nav nav-treeview">
+              <li className="nav-item">
+                <a href="pages/tables/simple.html" className="nav-link">
+                  <i className="far fa-circle nav-icon" />
+                  <p>Video 1</p>
+                </a>
+              </li>
+              <li className="nav-item">
+                <a href="pages/tables/data.html" className="nav-link">
+                  <i className="far fa-circle nav-icon" />
+                  <p>Video 2</p>
+                </a>
+              </li>
+              <li className="nav-item">
+                <a href="pages/tables/jsgrid.html" className="nav-link">
+                  <i className="far fa-circle nav-icon" />
+                  <p>Video 3</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li className="nav-item">
+            <a href="pages/calendar.html" className="nav-link">
+              <i className="nav-icon fas fa-video" />
+              <p>
+                Manage Live Videos                
+              </p>
+            </a>
+          </li>
+          <li className="nav-item">
+            <a href="pages/calendar.html" className="nav-link">
+              <i className="nav-icon fas fa-file-pdf" />
+              <p>
+                Manage PDFs
+              </p>
+            </a>
+          </li>
+          <li className="nav-item">
+            <a href="pages/calendar.html" className="nav-link">
+              <i className="nav-icon fab fa-pagelines" />
+              <p>
+                Manage Packages                
+              </p>
+            </a>
+          </li>
+          <li className="nav-item">
+            <a href="pages/calendar.html" className="nav-link">
+              <i className="nav-icon fas fa-cog" />
+              <p>
+                Settings                
+              </p>
+            </a>
+          </li>
+          <li className="nav-item">
+            <a href="pages/calendar.html" className="nav-link">
+              <i className="nav-icon fas fa-cog" />
+              <p>
+                App Banner                
+              </p>
+            </a>
+          </li>
+        
+        </ul>
+      </nav>
+      {/* /.sidebar-menu */}
+    </div>
+    {/* /.sidebar */}
+  </aside>
+</div>
 
-export default Sidebar;
+        )
+    }
+}

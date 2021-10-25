@@ -118,7 +118,18 @@ const Headerr = () => {
                 // data-bs-toggle="modal"
                 // data-bs-target="#loginmod"
               >
-                Dashboard
+                Admin Dashboard
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link
+                className="nav-link"
+                to="/StudentDashboard"
+                // className="nav-link scrollto"
+                // data-bs-toggle="modal"
+                // data-bs-target="#loginmod"
+              >
+                Student Dashboard
               </Link>
             </li>
             <li className="nav-item">
@@ -147,7 +158,7 @@ const Headerr = () => {
                       type="text"
                       name="name"
                       id="name"
-                      placeholder="First Name"
+                      placeholder="Full Name"
                       required=""
                       autocomplete="off"
                       aria-required="true"
@@ -164,12 +175,38 @@ const Headerr = () => {
                       aria-required="true"
                     />
                   </div>
+                  <div>
+                    <div className="form-check">
+                      <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" />
+                      <label className="form-check-label" htmlFor="flexRadioDefault1">
+                        Student
+                      </label>
+                    </div>
+                    <div className="form-check">
+                      <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" defaultChecked />
+                      <label className="form-check-label" htmlFor="flexRadioDefault2">
+                        Admin
+                      </label>
+                    </div>
+                  </div>
+
                   <div className="form-group">
                     <input
                       type="password"
                       name="pass"
                       className="form-control"
                       placeholder="Password"
+                      required=""
+                      autocomplete="off"
+                      aria-required="true"
+                    />
+                  </div>
+                  <div className="form-group">
+                    <input
+                      type="password"
+                      name="pass"
+                      className="form-control"
+                      placeholder="Confirm Password"
                       required=""
                       autocomplete="off"
                       aria-required="true"
