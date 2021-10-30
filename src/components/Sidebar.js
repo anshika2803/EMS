@@ -46,15 +46,59 @@ export default class Sidebar extends Component {
                     </p>
                   </Link>
                 </li>
-                <li className="nav-item">
-                  <Link to="dashboard" className="nav-link">
-                    <i className="nav-icon fas fa-chart-pie" />
+                <li className="nav-item has-treeview">
+                  <a href="#" className="nav-link">
+                    <i className="nav-icon fas fa-shopping-bag" />
                     <p>
                       Misc
-                      {/* <span className="right badge badge-danger">New</span> */}
-                      <i className="right fas fa-angle-left" />
+                      <i className="fas fa-angle-left right" />
+                      
                     </p>
-                  </Link>
+                  </a>
+                  <ul className="nav nav-treeview">
+                    <li className="nav-item">
+                      <a href="pages/layout/top-nav.html" className="nav-link">
+                        <i className="far fa-circle nav-icon" />
+                        <p>Courses</p>
+                      </a>
+                    </li>
+                    <li className="nav-item">
+                      <a href="" className="nav-link">
+                        <i className="far fa-circle nav-icon" />
+                        <p>Sub Courses</p>
+                      </a>
+                    </li>
+                    <li className="nav-item">
+                    <Link to="subject" className="nav-link">
+                        <i className="far fa-circle nav-icon" />
+                        <p>Subjects</p>
+                    </Link>
+                    </li>
+                    <li className="nav-item">
+                      <a href="" className="nav-link">
+                        <i className="far fa-circle nav-icon" />
+                        <p>Topics & Chapters</p>
+                      </a>
+                    </li>
+                    <li className="nav-item">
+                      <a href="" className="nav-link">
+                        <i className="far fa-circle nav-icon" />
+                        <p>Instruction Files</p>
+                      </a>
+                    </li>
+                    <li className="nav-item">
+                      <a href="" className="nav-link">
+                        <i className="far fa-circle nav-icon" />
+                        <p>Documents</p>
+                      </a>
+                    </li>
+                    <li className="nav-item">
+                      <a href="" className="nav-link">
+                        <i className="far fa-circle nav-icon" />
+                        <p>News</p>
+                      </a>
+                    </li>
+                  </ul>
                 </li>
                 <li className="nav-item">
                   <Link to="students" className="nav-link">
