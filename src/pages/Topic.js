@@ -2,20 +2,20 @@ import React, { Component } from "react";
 import Sidebar from "../components/Sidebar";
 import Navbar from "../components/Navbar";
 import DashboardFooter from "../components/DashboardFooter";
-import SubjectService from "../services/SubjectService";
+import TopicService from "../services/TopicService";
 
-export default class Subject extends Component{
+export default class Topic extends Component{
     constructor(props) {
         super(props)
 
         this.state = {
-            subjects: []
+            topics: []
         }
     }
 
 componentDidMount(){
-    SubjectService.getSubjects().then((res) => {
-        this.setState({ subjects: res.data});
+    TopicService.getTopics().then((res) => {
+        this.setState({ topics: res.data});
     });
 }
 render(){
@@ -24,23 +24,25 @@ render(){
       <Navbar />
       <Sidebar />
         <div>
-            <h2 className="text-center">Subject List</h2>
+            <h2 className="text-center">Topic List</h2>
             <div className="row table-responsive">
                 <table className="table table-striped table-bordered align-middle">
                     <thead>
                         <tr>
-                            <th>No.</th>
-                            <th>Subject Name</th>
+                            <th>Topic No.</th>
+                            <th>Subject No.</th>
+                            <th>Topic Name</th>
                         </tr>
                     </thead>
 
                     <tbody>
                        {
-                           this.state.subjects.map(
-                               subject =>
-                               <tr key = {subject.subjectId}>
-                                   <td>{ subject.subjectId }</td>
-                                   <td>{ subject.subjectName}</td>
+                           this.state.topics.map(
+                               topic =>
+                               <tr key = {topic.topicId}>
+                                   <td>{ topic.topicId }</td>
+                                   <td>{ topic.subjectId}</td>
+                                   <td>{ topic.topicName}</td>
                                    
                                </tr>
                            )

@@ -47,7 +47,7 @@ export default class Sidebar extends Component {
                   </Link>
                 </li>
                 <li className="nav-item has-treeview">
-                  <a href="#" className="nav-link">
+                  <a href="dashboard" className="nav-link">
                     <i className="nav-icon fas fa-shopping-bag" />
                     <p>
                       Misc
@@ -57,10 +57,10 @@ export default class Sidebar extends Component {
                   </a>
                   <ul className="nav nav-treeview">
                     <li className="nav-item">
-                      <a href="pages/layout/top-nav.html" className="nav-link">
+                    <Link to="course" className="nav-link">
                         <i className="far fa-circle nav-icon" />
                         <p>Courses</p>
-                      </a>
+                    </Link>
                     </li>
                     <li className="nav-item">
                       <a href="" className="nav-link">
@@ -75,10 +75,10 @@ export default class Sidebar extends Component {
                     </Link>
                     </li>
                     <li className="nav-item">
-                      <a href="" className="nav-link">
+                    <Link to="topic" className="nav-link">
                         <i className="far fa-circle nav-icon" />
                         <p>Topics & Chapters</p>
-                      </a>
+                    </Link>
                     </li>
                     <li className="nav-item">
                       <a href="" className="nav-link">
@@ -198,41 +198,18 @@ export default class Sidebar extends Component {
                     </p>
                   </a>
                   <ul className="nav nav-treeview">
+                    
                     <li className="nav-item">
-                      <a href="pages/UI/general.html" className="nav-link">
+                    <Link to="question" className="nav-link">
                         <i className="far fa-circle nav-icon" />
-                        <p>Q1</p>
-                      </a>
+                        <p>Questions</p>
+                    </Link>
                     </li>
                     <li className="nav-item">
-                      <a href="pages/UI/icons.html" className="nav-link">
+                    <Link to="passage" className="nav-link">
                         <i className="far fa-circle nav-icon" />
-                        <p>Q2</p>
-                      </a>
-                    </li>
-                    <li className="nav-item">
-                      <a href="pages/UI/buttons.html" className="nav-link">
-                        <i className="far fa-circle nav-icon" />
-                        <p>Q3</p>
-                      </a>
-                    </li>
-                    <li className="nav-item">
-                      <a href="pages/UI/sliders.html" className="nav-link">
-                        <i className="far fa-circle nav-icon" />
-                        <p>Q4</p>
-                      </a>
-                    </li>
-                    <li className="nav-item">
-                      <a href="pages/UI/modals.html" className="nav-link">
-                        <i className="far fa-circle nav-icon" />
-                        <p>Q5</p>
-                      </a>
-                    </li>
-                    <li className="nav-item">
-                      <a href="pages/UI/navbar.html" className="nav-link">
-                        <i className="far fa-circle nav-icon" />
-                        <p>Q6</p>
-                      </a>
+                        <p>Passages</p>
+                    </Link>
                     </li>
                   </ul>
                 </li>
@@ -246,22 +223,16 @@ export default class Sidebar extends Component {
                   </a>
                   <ul className="nav nav-treeview">
                     <li className="nav-item">
-                      <a href="pages/forms/general.html" className="nav-link">
+                    <Link to="test" className="nav-link">
                         <i className="far fa-circle nav-icon" />
-                        <p>Test 1</p>
-                      </a>
+                        <p>Test</p>
+                    </Link>
                     </li>
                     <li className="nav-item">
-                      <a href="pages/forms/advanced.html" className="nav-link">
+                    <Link to="testSeries" className="nav-link">
                         <i className="far fa-circle nav-icon" />
-                        <p>Test 2</p>
-                      </a>
-                    </li>
-                    <li className="nav-item">
-                      <a href="pages/forms/editors.html" className="nav-link">
-                        <i className="far fa-circle nav-icon" />
-                        <p>Test 3</p>
-                      </a>
+                        <p>Test Series</p>
+                    </Link>
                     </li>
                   </ul>
                 </li>

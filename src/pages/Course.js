@@ -2,20 +2,20 @@ import React, { Component } from "react";
 import Sidebar from "../components/Sidebar";
 import Navbar from "../components/Navbar";
 import DashboardFooter from "../components/DashboardFooter";
-import SubjectService from "../services/SubjectService";
+import CourseService from "../services/CourseService";
 
-export default class Subject extends Component{
+export default class Course extends Component{
     constructor(props) {
         super(props)
 
         this.state = {
-            subjects: []
+            courses: []
         }
     }
 
 componentDidMount(){
-    SubjectService.getSubjects().then((res) => {
-        this.setState({ subjects: res.data});
+    CourseService.getCourses().then((res) => {
+        this.setState({ courses: res.data});
     });
 }
 render(){
@@ -24,23 +24,25 @@ render(){
       <Navbar />
       <Sidebar />
         <div>
-            <h2 className="text-center">Subject List</h2>
+            <h2 className="text-center">Course List</h2>
             <div className="row table-responsive">
                 <table className="table table-striped table-bordered align-middle">
                     <thead>
                         <tr>
-                            <th>No.</th>
-                            <th>Subject Name</th>
+                            <th>Course No.</th>
+                            <th>Course Name</th>
+                            <th> Code</th>
                         </tr>
                     </thead>
 
                     <tbody>
                        {
-                           this.state.subjects.map(
-                               subject =>
-                               <tr key = {subject.subjectId}>
-                                   <td>{ subject.subjectId }</td>
-                                   <td>{ subject.subjectName}</td>
+                           this.state.courses.map(
+                               course =>
+                               <tr key = {course.courseId}>
+                                   <td>{ course.courseId }</td>
+                                   <td>{ course.courseName}</td>
+                                   <td>{ course.courseCode}</td>
                                    
                                </tr>
                            )
