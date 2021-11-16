@@ -9,6 +9,8 @@ import Topic from "./pages/Topic";
 import "./App.css";
 import Course from "./pages/Course";
 import Question from "./pages/Question";
+import CreateCourse from "./pages/CreateCourse";
+import UpdateCourse from "./pages/UpdateCourse";
 const App = () => {
   return (
     <BrowserRouter>
@@ -22,6 +24,11 @@ const App = () => {
         <Route path="/course" exact component={Course} />
         <Route path="/question" exact component={Question} />
         {/* <Route path="/passage" exact component={Passage} /> */}
+        <Route path="/add-course/:courseId" exact component={CreateCourse} />
+        {/* <Route path="/update-course/:courseId" exact component={UpdateCourse} /> */}
+
+
+
 
 
       </Switch>
