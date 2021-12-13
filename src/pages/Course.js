@@ -14,6 +14,7 @@ export default class Course extends Component{
         this.addCourse = this.addCourse.bind(this);
         this.editCourse= this.editCourse.bind(this);
         this.deleteCourse = this.deleteCourse.bind(this);
+       // this.searchTerm = this.searchTerm.bind(this);
     }
     deleteCourse(courseId){
         CourseService.deleteCourse(courseId).then( res => {
@@ -28,8 +29,14 @@ export default class Course extends Component{
 componentDidMount(){
     CourseService.getCourses().then((res) => {
         this.setState({ courses: res.data});
+        console.log(this.state.courses);
     });
 }
+// if( this.state.courses){
+//     { this.state.courses.map((courses)=>
+//     {console.log(courses);}
+//     )}
+// }
 addCourse(){
     this.props.history.push('/add-course/_add');
 }
@@ -42,6 +49,15 @@ render(){
             <h2 className="text-center">Course List</h2>
             <div className = "row">
                     <button className="btn btn-primary" onClick={this.addCourse}> +Add</button>
+            </div>
+            <div className="row">
+                <input type= "text" placeholder="Search here...."/>
+                {
+                    this.state.courses.map((val,key) => {
+                        return
+                    })
+                }
+
             </div>
             <div className="row table-responsive">
                 <table className="table table-striped table-bordered align-middle">

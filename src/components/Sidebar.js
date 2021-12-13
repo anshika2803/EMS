@@ -63,7 +63,7 @@ export default class Sidebar extends Component {
                     </Link>
                     </li>
                     <li className="nav-item">
-                      <a href="" className="nav-link">
+                      <a href="subcourse" className="nav-link">
                         <i className="far fa-circle nav-icon" />
                         <p>Sub Courses</p>
                       </a>
