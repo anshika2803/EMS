@@ -14,7 +14,6 @@ export default class Student extends Component{
         this.addStudent = this.addStudent.bind(this);
         this.editStudent= this.editStudent.bind(this);
         this.deleteStudent = this.deleteStudent.bind(this);
-       // this.searchTerm = this.searchTerm.bind(this);
     }
     deleteStudent(studentId){
         StudentService.deleteStudent(studentId).then( res => {
@@ -42,15 +41,15 @@ render(){
         <div>
             <h2 className="text-center">Student List</h2>
             <div className = "row">
-                    <button className="btn btn-primary" onClick={this.addCourse}> +Add</button>
+                    <button className="btn btn-primary" onClick={this.addStudent}> +Add</button>
             </div>
             <div className="row">
-                <input type= "text" placeholder="Search here...."/>
+                {/* <input type= "text" placeholder="Search here...."/>
                 {
                     this.state.students.map((val,key) => {
                         return
                     })
-                }
+                } */}
 
             </div>
             <div className="row table-responsive">

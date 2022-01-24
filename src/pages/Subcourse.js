@@ -4,6 +4,8 @@ import Navbar from "../components/Navbar";
 import DashboardFooter from "../components/DashboardFooter";
 import SubcourseService from "../services/SubcourseService";
 import CourseService from "../services/CourseService";
+import axios from 'axios';
+import ReactPaginate from 'react-paginate';
 
 export default class Subcourse extends Component{
     constructor(props) {
@@ -19,7 +21,7 @@ export default class Subcourse extends Component{
        // this.searchTerm = this.searchTerm.bind(this);
     }
     deleteSubcourse(subcourseId){
-        SubcourseService.deleteCourse(subcourseId).then( res => {
+        SubcourseService.deleteSubcourse(subcourseId).then( res => {
             this.setState({subcourses: this.state.subcourses.filter(subcourse => subcourse.subcourseId !== subcourseId)});
         });
     }
@@ -34,7 +36,7 @@ componentDidMount(){
     });
     CourseService.getCourses().then((res) => {
         this.setState({ courses: res.data});
-        console.log(this.state.courses);
+        //console.log(this.state.courses);
     });
 
 }

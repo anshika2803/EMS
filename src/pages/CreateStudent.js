@@ -104,22 +104,7 @@ export default class createStudent extends Component {
                                             <input placeholder="Reg Date" name="RegDate" className="form-control" 
                                                 value={this.state.regDate} onChange={this.changeRegDateHandler}/>
                                         </div>
-                                        {/* <div className = "form-group">
-                                            <label> Reg Date </label>
-                                                                                            
-                                                <TextField
-                                                    id="date"
-                                                    label="Enter current date"
-                                                    type="date"
-                                                    defaultValue="2021-05-24"
-                                                    InputLabelProps={{
-                                                    shrink: true,
-                                                    }}
-                                                    name="regDate" className="form-control" 
-                                                value={this.state.regDate} onChange={this.changeRegDateHandler}
-                                                />
-                                                </div> */}
-                                        
+                                       
 
                                         <button className="btn btn-success" onClick={this.saveOrUpdateStudent}>Save</button>
                                         <button className="btn btn-danger" onClick={this.cancel.bind(this)} style={{marginLeft: "10px"}}>Cancel</button>

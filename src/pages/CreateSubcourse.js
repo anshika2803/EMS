@@ -1,12 +1,7 @@
 import React, { Component } from 'react'
 import SubcourseService from '../services/SubcourseService';
 import CourseService from '../services/CourseService';
-import {
-    Dropdown,
-    DropdownToggle,
-    DropdownMenu,
-    DropdownItem
-} from 'reactstrap';
+import {Dropdown,DropdownToggle,DropdownMenu,DropdownItem} from 'reactstrap';
 
 
 export default class CreateSubcourse extends Component {
@@ -36,11 +31,10 @@ export default class CreateSubcourse extends Component {
     componentDidMount() {
         CourseService.getCourses().then((res) => {
             this.setState({ courses: res.data });
-            console.log(this.state.courses);
+            //console.log(this.state.courses);
         });
 
         if (this.state.subcourseId === '_add') {
-
             return
         } else {
             SubcourseService.getSubcourseById(this.state.subcourseId).then((res) => {
@@ -108,10 +102,7 @@ export default class CreateSubcourse extends Component {
                                     </div>
                                     <div className="form-group">
                                         <label> Course Name: </label>
-                                        {/* <input placeholder="Course Code" name="courseCode" className="form-control" 
-                                                value={this.state.courseCode} onChange={this.changeCourseCodeHandler}/> */}
                                         <div class="input-group mb-3">
-                                            {/* <input type="text" className="form-control" placeholder="Course Name" name="courseName" aria-label="Text input with dropdown button" value={this.state.courseName} onChange={this.changeCourseNameHandler}/> /> */}
                                             <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
                                                 <DropdownToggle caret id="course-dropdown">
                                                      {this.state.courseName ? this.state.courseName  : <label>Course</label>}

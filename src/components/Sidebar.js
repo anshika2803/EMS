@@ -47,14 +47,14 @@ export default class Sidebar extends Component {
                   </Link>
                 </li>
                 <li className="nav-item has-treeview">
-                  <a href="dashboard" className="nav-link">
+                  <Link to="dashboard" className="nav-link active">
                     <i className="nav-icon fas fa-shopping-bag" />
                     <p>
                       Misc
                       <i className="fas fa-angle-left right" />
                       
                     </p>
-                  </a>
+                  </Link>
                   <ul className="nav nav-treeview">
                     <li className="nav-item">
                     <Link to="course" className="nav-link">
@@ -93,15 +93,15 @@ export default class Sidebar extends Component {
                       </a>
                     </li>
                     <li className="nav-item">
-                      <a href="" className="nav-link">
+                    <Link to="news" className="nav-link">
                         <i className="far fa-circle nav-icon" />
                         <p>News</p>
-                      </a>
+                    </Link>
                     </li>
                   </ul>
                 </li>
                 <li className="nav-item">
-                  <Link to="students" className="nav-link">
+                  <Link to="student" className="nav-link">
                     <i className="nav-icon fas fa-user-graduate" />
                     <p>Students</p>
                   </Link>
@@ -190,7 +190,7 @@ export default class Sidebar extends Component {
                   </ul>
                 </li>
                 <li className="nav-item has-treeview">
-                  <a href="#" className="nav-link">
+                  <a href="dashboard" className="nav-link">
                     <i className="nav-icon fas fa-question-circle" />
                     <p>
                       Manage Questions
@@ -214,13 +214,13 @@ export default class Sidebar extends Component {
                   </ul>
                 </li>
                 <li className="nav-item has-treeview">
-                  <a href="#" className="nav-link">
+                  <Link to="dashboard" className="nav-link active">
                     <i className="nav-icon fas fa-chart-pie" />
                     <p>
                       Manage Test
                       <i className="fas fa-angle-left right" />
                     </p>
-                  </a>
+                  </Link>
                   <ul className="nav nav-treeview">
                     <li className="nav-item">
                     <Link to="test" className="nav-link">
